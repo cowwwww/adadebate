@@ -1,0 +1,484 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    color: #000000;
+    margin-top: 10px;
+    font-size: 85px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header .left-column {
+    flex: 0 0 30%; /* Adjusted width */
+    text-align: left;
+    padding-left: 10px;
+}
+
+.header .middle-column {
+    flex: 1; /* This will make the middle-column take up the remaining space */
+    text-align: center;
+    font-size: 30px;
+}
+
+.header .right-column {
+    flex: 0 0 30%; /* Adjusted width */
+    text-align: right;
+    padding-right: 20px;
+}
+
+h3 {
+    color: #000000;
+    font-size: 90px;
+    font-weight: bold;
+    margin-bottom: 300px;
+}
+
+h6 {
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+    position: fixed;
+    top: 35%;        /* Center vertically */
+    left: 50%;     
+    transform: translate(-50%, -50%);  /* Adjust to exactly center the element */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+
+h2 {
+    color: #000000;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 25%;        /* Center vertically */
+    left: 50%;     
+    transform: translate(-50%, -50%);  /* Adjust to exactly center the element */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+h4 {
+    color: #000000;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 15%;        /* Center vertically */
+    left: 50%;     
+    transform: translate(-50%, -50%);  /* Adjust to exactly center the element */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+h5 {
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    top: 52%;        /* Center vertically */
+    left: 50%;     
+    transform: translate(-50%, -50%);  /* Adjust to exactly center the element */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+
+
+
+.timer-display {
+    font-size: 200px;
+    color: #ffc300;
+    position: fixed;
+    top: 53%;        /* Center vertically */
+    left: 50%;       /* Center horizontally */
+    transform: translate(-50%, -50%);  /* Adjust to exactly center the element */
+    z-index: 100;    /* Ensure it stays on top of other elements */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+    font-weight: bold;
+}
+
+
+
+
+
+
+.button-group {
+    position: fixed;
+    bottom: 200px;  /* 200px margin from the bottom */
+    left: 50%;      /* Center horizontally */
+    transform: translateX(-50%);  /* Adjust to exactly center the button */
+}
+
+.button-group button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.button-group button:hover {
+    background-color: #333333;
+}
+
+
+
+
+.custom-button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
+.custom-button:hover {
+    background-color: #333333;
+}
+
+
+
+
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    bottom: 10px;  /* Ensure navigation buttons stay visible */
+}
+
+.nav-buttons button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 18px;  /* Slightly larger font for nav buttons */
+    font-weight: bold;
+    padding: 12px 25px;  /* Larger padding for nav buttons */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 10px;
+    margin-right: 40px;
+}
+
+
+.input-box {
+    flex: 0 0 45%; /* 48% width for each column */
+    margin-bottom: 30px;
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.page {
+    display: none;
+    padding-top: 0px;
+}
+
+
+
+.visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    align-items: center;
+    height: 100%; /* Ensure the visible page takes full height */
+    text-align: center;
+    padding: 0; /* Remove any extra padding */
+}
+
+/* 顶部的正方/反方设计 */
+.debate-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.debate-header .aff {
+    background-color: #ffc300;
+    color: white;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.debate-header .neg {
+    background-color: #ffffff;
+    color: white;
+    width: 50%;
+    text-align: right;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.debate-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.side {
+    width: 45%;
+}
+
+.zhengfang {
+    text-align: left;
+}
+
+.fanfang {
+    text-align: right;
+}
+
+
+
+label {
+    font-weight: bold;
+}
+
+
+
+/* For two-column layout */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;  /* Adjust width for better layout */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+
+/* Prevent scrolling */
+html, body {
+    overflow: hidden; /* Disable both vertical and horizontal scrolling */
+    height: 100%; /* Ensure body takes up the full height */
+    width: 100%; /* Ensure body takes up the full width */
+    margin: 0; /* Remove default margin to avoid overflow */
+    padding: 0; /* Remove padding to avoid overflow */
+}
+
+/* Make sure the content fits within the screen */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.stances {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.left-stance {
+    flex: 0 0 30%;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 10px;
+    color: #303030; /* Dark grey color */
+}
+
+.right-stance {
+    flex: 0 0 30%;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    padding-right: 40px;
+    color: #303030; /* Dark grey color */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Left-side heading (正方申论) */
+
+
+/* Right-side heading (反方申论) */
+/* Flexbox container to align both headings and 发言方 */
+.debate-headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 20%; /* Adjust vertical alignment */
+    width: 100%; /* Stretch the container across the screen */
+    padding: 0 5%; /* Add some padding to keep it away from the edges */
+    box-sizing: border-box;
+}
+
+.heading-left, .heading-right {
+    color: #000000;
+    font-size: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.heading-left {
+    text-align: left;
+}
+
+.heading-right {
+    text-align: right;
+}
+
+#sideTitle {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+#sideTitleZiyou {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+.stances2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.left-stance2 {
+    font-size: 50px;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    position: fixed;
+    font-weight: bold;
+    top: 40%;       /* 20% from the top of the screen */
+    left: 20%;      /* Position 5% from the right side */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+.right-stance2 {
+    color: #000000;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+    position: fixed;
+    top: 40%;       /* 20% from the top of the screen */
+    right: 20%;       /* Position 5% from the left side */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+
+.timer-display-left {
+    font-size: 120px;
+    color: #ffc300;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    font-weight: bold;
+    top: 47%;       /* 20% from the top of the screen */
+    left: 5%;      /* Position 5% from the right side */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+.timer-display-right {
+    font-size: 120px;
+    color: #ffc300;
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    font-weight: bold;
+    top: 47%;       /* 20% from the top of the screen */
+    right: 5%;      /* Position 5% from the right side */
+    white-space: nowrap;  /* Prevent the text from wrapping into multiple lines */
+}
+
+
+
+
+
+body {
+    background-image: url('30.png'); /* Path to your image */
+    background-size: cover;          /* Ensures the image covers the entire screen */
+    background-position: center;     /* Centers the background image */
+    background-repeat: no-repeat;    /* Prevents the image from repeating */
+    background-attachment: fixed;    /* Makes the background stay fixed when scrolling */
+    margin: 0;                       /* Removes default body margin */
+    padding: 0;                      /* Removes default body padding */
+}
+
